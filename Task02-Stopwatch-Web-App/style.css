@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #15054a, #0074e4);
+  color: #fff;
+}
+
+.app {
+  background: rgba(10, 10, 50, 0.9);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  max-width: 480px;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.4rem;
+}
+
+header p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+#time-display {
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background: radial-gradient(circle at top left, #00e0ff, #15054a);
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* BUTTONS */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.controls button {
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #00e0ff;
+  color: #15054a;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s;
+}
+
+.controls button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* LAPS */
+.laps {
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.laps h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+#laps-list {
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+#laps-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#laps-list li span:first-child {
+  opacity: 0.8;
+}
+
+/* SCROLLBAR (just to look decent) */
+.laps::-webkit-scrollbar {
+  width: 6px;
+}
+.laps::-webkit-scrollbar-thumb {
+  background: rgba(0, 224, 255, 0.6);
+  border-radius: 999px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .app {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  #time-display {
+    font-size: 2.2rem;
+  }
+}
